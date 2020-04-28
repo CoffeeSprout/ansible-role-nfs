@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: True
+  roles:
+  - role: coffeesprout.nfs
+    nfs_server: 192.168.1.3
+    nfs_mounts:
+    - destination: "/mnt/lab"
+      nfs_path: "volume1/lab"

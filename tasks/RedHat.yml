@@ -1,0 +1,8 @@
+---
+
+- name: install dependencies for nfs
+  package:
+    name: nfs-utils
+    state: present
+
+

@@ -1,0 +1,4 @@
+---
+# defaults file for coffeesprout.nfs
+
+nfs_mounts: []

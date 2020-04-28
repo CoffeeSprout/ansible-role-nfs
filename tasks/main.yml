@@ -1,0 +1,20 @@
+---
+# tasks file for coffeesprout.nfs
+
+# OS specific preparations
+- include_tasks: "{{ ansible_os_family }}.yml"
+
+- name: ensure mount targets
+  file:
+    path: "{{ item.destination }}"
+    state: directory
+  with_items: "{{ nfs_mounts }}"
+
+- name: mount datasets
+  mount:
+    name: "{{ item.destination }}"
+    src: "{{ nfs_server }}:/{{ item.nfs_path }}"
+    fstype: nfs
+    opts: "{{ nfs_opts | default(omit) }}"
+    state: mounted
+  with_items: "{{ nfs_mounts }}"

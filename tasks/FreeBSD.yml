@@ -1,0 +1,15 @@
+---
+
+- name: enable nfs service
+  command: sysrc -f /etc/rc.conf nfs_client_enable="YES"
+  register: sysrc_changed
+  changed_when:  "'YES -> YES' not in sysrc_changed.stdout"
+  tags:
+  - startup
+
+- name: start nfs_client service
+  service:
+    name: nfsclient
+    state: started
+  tags:
+  - startup
