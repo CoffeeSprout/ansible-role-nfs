@@ -8,6 +8,9 @@
   file:
     path: "{{ item.destination }}"
     state: directory
+    owner: "{{ item.owner | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
   with_items: "{{ nfs_mounts }}"
 
 - name: mount datasets
