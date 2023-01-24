@@ -1,6 +1,6 @@
 galaxy_info:
   author: Barry van Someren
-  description: Setup nfs client mounts on CentOS and FreeBSD
+  description: Setup nfs client mounts on Linux and FreeBSD
   company: CoffeeSprout ICT Services
 
   license: BSD
@@ -15,10 +15,18 @@ galaxy_info:
     versions:
     - 7
     - 8
+  - name: Debian
+    versions:
+    - bullseye
+  - name: Ubuntu
+    versions:
+    - all
 
   galaxy_tags:
   - freebsd
   - centos
+  - debian
+  - ubuntu
   - nfs
 
 dependencies: []

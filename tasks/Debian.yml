@@ -2,6 +2,6 @@
 
 - name: install dependencies for nfs
   package:
-    name: nfs-utils
+    name: nfs-common
     state: present
 
